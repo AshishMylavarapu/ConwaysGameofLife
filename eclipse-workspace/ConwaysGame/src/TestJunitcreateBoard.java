@@ -6,16 +6,18 @@ import org.junit.jupiter.api.Test;
  */
 
 /**
- * @author USER
+ * @author Ashish 2020501090
+ * 
  *
  */
+/**created test class for create board */
 public class TestJunitcreateBoard {
 	@Test
 	public void testcase2() {
 		int n =5;
 		
 	
-		int current [][]= {{2,1},{2,4},{3,4},{4,3}};
+		int current [][]= {{2,1},{2,4},{3,4},{4,3}};  			/**Assigining inputs for creating a board*/
 		Board obj = new Board();
 		boolean [][] x = obj.createBoard(n,current);
 		String sol = "";
@@ -30,7 +32,7 @@ public class TestJunitcreateBoard {
 			if (i<x.length-1) {
 				sol+="\n";
 			}
-		}
+		}														/**Expected output */
 		String expected="false_false_false_false_false\n"
 				+ "false_false_false_false_false\n"
 				+ "false_true_false_false_true\n"

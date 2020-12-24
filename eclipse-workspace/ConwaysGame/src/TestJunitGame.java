@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
  */
 
 /**
- * @author USER
+ * @author Ashish 2020501090
  *
  */
 public class TestJunitGame {
@@ -14,9 +14,10 @@ public class TestJunitGame {
 		String str = "start";
 		int n = 5;
 		int [][] livecells = {{1,1},{2,2},{3,3}};
-		String gen ="current";
+		String shift ="finite";
+		int gen =1;
 		ConwaysGameofLife con = new ConwaysGameofLife();
-		String newPrint = con.start(str, n, livecells, gen);
+		String newPrint = con.start(str, n, livecells,shift, gen);
 		String testing ="_____\n"
 				+ "_*___\n"
 				+ "__*__\n"
@@ -29,9 +30,11 @@ public class TestJunitGame {
 		String str = "end";
 		int n = 5;
 		int [][] livecells = {{1,1},{2,1},{3,1}};
-		String gen ="current";
+//		String gen ="current";
+		String shift ="finite";
+		int gen =1;
 		ConwaysGameofLife con = new ConwaysGameofLife();
-		String newPrint = con.start(str, n, livecells, gen);
+		String newPrint = con.start(str, n, livecells,shift, gen);
 		String testing ="";
 		Assertions.assertEquals(testing,newPrint);
 	}
@@ -40,13 +43,49 @@ public class TestJunitGame {
 		String str = "start";
 		int n = 5;
 		int [][] livecells = {{1,1},{1,3},{2,2},{2,3},{3,1},{3,3}};
-		String gen ="next";
+//		String gen ="next";
+		String shift ="finite";
+		int gen =2;
 		ConwaysGameofLife con = new ConwaysGameofLife();
-		String newPrint = con.start(str, n, livecells, gen);
+		String newPrint = con.start(str, n, livecells,shift, gen);
 		String testing ="_____\n"
+				+ "___**\n"
+				+ "_____\n"
 				+ "___*_\n"
-				+ "_*_*_\n"
-				+ "___*_\n"
+				+ "_____";
+		Assertions.assertEquals(testing,newPrint);
+	}
+	@Test
+	public void testStartFour() {
+		String str = "start";
+		int n = 5;
+		int [][] livecells = {{1,1},{1,3},{2,2},{2,3},{3,1},{3,3}};
+//		String gen ="next";
+		String shift ="infinite";
+		int gen =2;
+		ConwaysGameofLife con = new ConwaysGameofLife();
+		String newPrint = con.start(str, n, livecells,shift, gen);
+		String testing ="_____\n"
+				+ "_____\n"
+				+ "_____\n"
+				+ "_____\n"
+				+ "_____";
+		Assertions.assertEquals(testing,newPrint);
+	}
+	@Test
+	public void testStartFive() {
+		String str = "start";
+		int n = 5;
+		int [][] livecells = {{1,1},{1,3},{2,2},{2,3},{3,1},{3,3}};
+//		String gen ="next";
+		String shift ="finite";
+		int gen =5;
+		ConwaysGameofLife con = new ConwaysGameofLife();
+		String newPrint = con.start(str, n, livecells,shift, gen);
+		String testing ="_____\n"
+				+ "_____\n"
+				+ "_____\n"
+				+ "_____\n"
 				+ "_____";
 		Assertions.assertEquals(testing,newPrint);
 	}

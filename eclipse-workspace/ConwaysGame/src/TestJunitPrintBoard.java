@@ -6,18 +6,18 @@ import org.junit.jupiter.api.Test;
  */
 
 /**
- * @author USER
- *
- */
+ * @author Ashish 2020501090
+ /**Created a test class for print board  */
+
 public class TestJunitPrintBoard {
-	@Test
+	@Test								/**Assigning the inputs */
 	public void testCase1() {
 		boolean current[][] = {{false,false,false,false,false},{false,true,false,true,false},{false,false,false,true,false},{false,false,true,false,false},{false,false,false,false,false}};
 		Board obj = new Board ();
 		String sol = obj.printBoard(current);
 		String expected = "_____\n"
 				+ "_*_*_\n"
-				+ "___*_\n"
+				+ "___*_\n"					/**Expected output */
 				+ "__*__\n"
 				+ "_____";
 //		System.out.println(sol);
